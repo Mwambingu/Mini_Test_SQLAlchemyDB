@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from uuid import uuid4
 from sqlalchemy.orm import sessionmaker, scoped_session
 
-engine = create_engine("mysql+mysqldb://root:root@localhost/test_many", echo=True, pool_pre_ping=True)
+engine = create_engine("mysql+mysqldb://root:root@localhost/test_many", echo=False, pool_pre_ping=True)
 
 session_factory = sessionmaker(bind=engine, expire_on_commit=False)
 session = scoped_session(session_factory)
